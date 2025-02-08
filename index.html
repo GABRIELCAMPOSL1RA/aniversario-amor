@@ -16,10 +16,12 @@
       <h1>Feliz Aniversário, Amor!</h1>
       <nav>
         <ul class="nav-list">
-          <li><a href="#home">Início</a></li>
-          <li><a href="#galeria">Galeria</a></li>
-          <li><a href="#declaracoes">Declarações</a></li>
-          <li><a href="#surpresa">Surpresa</a></li>
+          <li><a href="#" class="tab-link active" data-target="home">Início</a></li>
+          <li><a href="#" class="tab-link" data-target="birthday">Feliz Aniversário</a></li>
+          <li><a href="#" class="tab-link" data-target="declaracoes">Declarações</a></li>
+          <li><a href="#" class="tab-link" data-target="historia">Nossa História</a></li>
+          <li><a href="#" class="tab-link" data-target="galeria">Galeria</a></li>
+          <li><a href="#" class="tab-link" data-target="surpresa">Surpresa</a></li>
         </ul>
       </nav>
       <button class="menu-toggle" id="menuToggle">&#9776;</button>
@@ -27,27 +29,58 @@
   </header>
 
   <main>
-    <section id="home" class="section">
-      <div class="container intro">
-        <h2>Nosso Amor é Divino</h2>
-        <p>Assim como Nossa Senhora e São José, nosso amor é abençoado e eterno.</p>
-        <a href="#declaracoes" class="btn">Veja as declarações</a>
-      </div>
-    </section>
-
-    <section id="galeria" class="section">
-      <div class="container">
-        <h2>Galeria de Fotos</h2>
-        <div class="gallery">
-          <!-- Substitua "foto1.jpg", "foto2.jpg", etc. pelas imagens reais -->
-          <img src="fotos/d815ce66-941a-4737-b70e-139769a8a0bf.JPG" alt="Foto 1">
-          <img src="fotos/IMG_5055.jpg" alt="Foto 2">
-          <img src="fotos/IMG_5214.jpg" alt="Foto 3">
+    <!-- Aba: Início -->
+    <section id="home" class="section tab-content active">
+      <div class="container home-content">
+        <div class="welcome">
+          <h2>Bem-vinda, Amor!</h2>
+          <p>
+            Que este dia seja tão especial quanto você é para mim. Navegue pelas abas e descubra um pouco do nosso amor e das bênçãos que recebemos.
+          </p>
         </div>
+
+        <!-- Slider de Imagens -->
+        <div class="slider">
+          <div class="slide fade">
+            <img src="fotos/d815ce66-941a-4737-b70e-139769a8a0bf.JPG" alt="Momento Especial 1">
+            <div class="caption">Momentos que me fazem sorrir</div>
+          </div>
+          <div class="slide fade">
+            <img src="fotos/IMG_5055.jpg" alt="Momento Especial 2">
+            <div class="caption">Cada olhar seu, uma bênção</div>
+          </div>
+          <div class="slide fade">
+            <img src="fotos/IMG_5214.jpg" alt="Momento Especial 3">
+            <div class="caption">Nosso amor é eterno</div>
+          </div>
+        </div>
+        <!-- Pontos de navegação do slider -->
+        <div class="slider-dots">
+          <span class="dot" onclick="currentSlide(1)"></span> 
+          <span class="dot" onclick="currentSlide(2)"></span> 
+          <span class="dot" onclick="currentSlide(3)"></span> 
+        </div>
+
+        <!-- Ícone para descer a página -->
+        <a href="#birthday" class="scroll-down">↓</a>
       </div>
     </section>
 
-    <section id="declaracoes" class="section">
+    <!-- Aba: Feliz Aniversário -->
+    <section id="birthday" class="section tab-content">
+      <div class="container">
+        <h2>Feliz Aniversário!</h2>
+        <p>
+          Hoje é o seu dia, e eu quero que você saiba que você ilumina a minha vida com sua luz e graça. Que Deus continue te abençoando e que possamos trilhar juntos o caminho da fé e do amor, assim como Nossa Senhora e São José.
+        </p>
+        <p>
+          Que cada sonho seu se realize e que cada momento seja repleto de alegria. Parabéns, minha amada, e que este seja apenas o começo de mais um ano incrível de vida!
+        </p>
+      </div>
+    </section>
+
+    <!-- Aba: Declarações -->
+    <section id="declaracoes" class="section tab-content">
       <div class="container">
         <h2>Minhas Declarações</h2>
         <div class="declarations">
@@ -60,12 +93,49 @@
       </div>
     </section>
 
-    <section id="surpresa" class="section">
+    <!-- Aba: Nossa História -->
+    <section id="historia" class="section tab-content">
+      <div class="container">
+        <h2>Nossa História</h2>
+        <div class="timeline"></div>
+          <div class="timeline-item">
+            <h3>Primeiro Abraço</h3>
+            <p>Em seu abraço, encontrei a segurança e o aconchego que sempre procurei, um sinal do amor que nos une.</p>
+          </div>
+          <div class="timeline-item">
+            <h3>Nosso Primeiro Beijo</h3>
+            <p>Cada beijo foi uma benção, selando nossa fé e nosso compromisso um com o outro.</p>
+          </div>
+          <div class="timeline-item">
+            <h3>Planos para o Futuro</h3>
+            <p>Sonho com o dia em que uniremos nossas vidas em matrimônio, seguindo o exemplo de fé e amor de Nossa Senhora e São José.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Aba: Galeria -->
+    <section id="galeria" class="section tab-content">
+      <div class="container">
+        <h2>Galeria de Fotos</h2>
+        <div class="gallery">
+          <!-- Substitua os nomes dos arquivos pelas suas imagens -->
+          <img src="fotos/d815ce66-941a-4737-b70e-139769a8a0bf.JPG" alt="Foto 1">
+          <img src="fotos/IMG_5055.jpg" alt="Foto 2">
+          <img src="fotos/IMG_5214.jpg" alt="Foto 3">
+        </div>
+      </div>
+    </section>
+
+    <!-- Aba: Surpresa -->
+    <section id="surpresa" class="section tab-content">
       <div class="container">
         <h2>Surpresa Especial</h2>
         <button id="showMessageBtn" class="btn">Clique aqui para a surpresa!</button>
         <div id="hiddenMessage" class="hidden">
-          <p>Querida, cada dia ao seu lado é uma bênção. Que possamos seguir o exemplo de fé e amor de Nossa Senhora e São José, e construir um futuro abençoado. Amo você e mal posso esperar para passar o resto da minha vida ao seu lado!</p>
+          <p>
+            Querida, cada dia ao seu lado é uma bênção. Que possamos seguir o exemplo de fé e amor de Nossa Senhora e São José, e construir um futuro abençoado. Amo você e mal posso esperar para passar o resto da minha vida ao seu lado!
+          </p>
         </div>
       </div>
     </section>
@@ -73,8 +143,8 @@
 
   <footer>
     <div class="container">
-      <p>&copy; 2025 Gabriel. Todos os direitos reservados.</p>
-      <a href="#home" class="back-to-top">Voltar ao topo</a>
+      <p>&copy; 2025 Seu Nome. Todos os direitos reservados.</p>
+      <a href="#" class="back-to-top">Voltar ao topo</a>
     </div>
   </footer>
 
